@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>React App</title>
+
+    <style>
+      .active {
+        background-color: blueviolet;
+      }
+      .nav a.active {
+  color: #fff;
+  background: #7600dc;
+}
+.nav a.inactive {
+  font-style: italic;
+}
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <script>
+        var util = {
+          mobileMenu() {
+            $("#nav").toggleClass("nav-visible");
+          },
+          windowResize() {
+            if ($(window).width() > 800) {
+              $("#nav").removeClass("nav-visible");
+            }
+          },
+          scrollEvent() {
+            var scrollPosition = $(document).scrollTop();
+
+            $.each(util.scrollMenuIds, function (i) {
+              var link = util.scrollMenuIds[i],
+                container = $(link).attr("href"),
+                containerOffset = $(container).offset().top,
+                containerHeight = $(container).outerHeight(),
+                containerBottom = containerOffset + containerHeight;
+              var active = document.getElementsByClassName("rays");
+
+              if (
+                scrollPosition < containerBottom - 20 &&
+                scrollPosition >= containerOffset - 20
+              ) {
+                $(link).addClass("active");
+              } else if (scrollPosition < 0 || scrollPosition == 0) {
+                $(active).addClass("active");
+              } else {
+                $(link).removeClass("active");
+              }
+            });
+          },
+        };
+
+        $(document).ready(function () {
+          util.scrollMenuIds = $("a.nav-link[href]");
+          $("#menu").click(util.mobileMenu);
+          $(window).resize(util.windowResize);
+          $(document).scroll(util.scrollEvent);
+        });
+        // ===================================================
+      </script>
+      <script>
+        $(document).ready(function () {
+          $(window).bind("scroll", function (e) {
+            parallaxScroll();
+          });
+        });
+
+        function parallaxScroll() {
+          const scrolled = $(window).scrollTop();
+          $(".up").css("top", 0 - scrolled * 0.3 + "px");
+          $(".middle").css("top", 0 - scrolled * 0.1 + "px");
+        }
+
+        $(document).ready(function () {
+          $(".list-item").click(function () {
+            var listItems = $(".list-item");
+            for (let i = 0; i < listItems.length; i++) {
+              listItems[i].classList.remove("activate");
+            }
+            this.classList.add("activate");
+          });
+        });
+        // ******************************************
+         $(".NavLink").click(function () {
+            $(".NavLink.active").removeClass('active')
+            $(this).addClass('active')
+         });
+  
+      </script>
+    </div>
+  </body>
+</html>
