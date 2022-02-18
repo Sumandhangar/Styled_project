@@ -1,9 +1,10 @@
 import React from 'react'
 import { SidebarContainer, Icon, CloseIcon,SidebarWrapper,SidebarMenu,SidebarLink,SideBtnWrap,SidebarRoute } from './SidebarElements';
-const Index = ({ isOpen, toggle}) => {
+const Index = () => {
+
     return (
-        <SidebarContainer isOpen={isOpen} onClick={toggle}>
-            <Icon onClick={toggle}>
+        <SidebarContainer>
+            <Icon>
                 <CloseIcon />
             </Icon>
             <SidebarWrapper>

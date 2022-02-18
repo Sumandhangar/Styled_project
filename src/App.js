@@ -36,8 +36,9 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // import Footers from "./components/webcopy/Footer";
 // import { Rays } from "../src/components/webcopy/Css";
 // ***************************************************
+import Navbar from './components/Navbar/Navbar'
 import Index from './Pages/Index'
-
+import Sidebar from './components/Sidebar/Index'
 
 function App() {
   return (
@@ -69,9 +70,12 @@ function App() {
     </Routes>
     <Footer /> */}
       {/* ******************************************** */}
-   <Router>
-     <Index />
-   </Router>
+      {/* <Navbar />
+      <Sidebar /> */}
+<Routes>
+ <Route exact path='/' excat element={<Index />} />
+</Routes>
+  
     </>
   );
 }

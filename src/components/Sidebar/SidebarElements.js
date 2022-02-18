@@ -14,14 +14,14 @@ align-items: center;
 top: 0;
 left: 0;
 transition: none.3s ease-in-out;
-/* opacity: ${({isOpen}) => (isOpen ? '100%' : '0')};
-top: ${({ isOpen }) (isOpen ? '0' : '-100%')}; */
+opacity: ${({isOpen}) => (isOpen ? '100%' : '0')};
+top: ${({isOpen}) => (isOpen ? '0' : '-100%')};
 `;
 
 export const SidebarMenu = styled.ul`
  display: grid;
  grid-template-columns: 1fr;
- grid-template-rows: repeat(6,80px);
+ grid-template-rows: repeat(4,80px);
  text-align: center;
  @media screen and (max-width:480px){
      grid-template-rows: repeat()6,60px;
@@ -62,6 +62,7 @@ cursor: pointer;
 export const SideBtnWrap = styled.div`
 display: flex;
 justify-content: center;
+margin-left: 3.5rem;
 `;
 export const SidebarRoute = styled(LinkR)`
 border-radius: 50px;
