@@ -13,7 +13,7 @@ display: grid;
 align-items: center;
 top: 0;
 left: 0;
-transition: none.3s ease-in-out;
+transition: .8s ease-in-out;
 opacity: ${({isOpen}) => (isOpen ? '100%' : '0')};
 top: ${({isOpen}) => (isOpen ? '0' : '-100%')};
 `;
@@ -60,13 +60,13 @@ color: #fff;
 cursor: pointer;
 &:hover{
     color: #01bf71;
-    transition:  02s ease-in-out;
+    transition:  2s ease-in-out;
 }
 `;
 export const SideBtnWrap = styled.div`
 display: flex;
 justify-content: center;
-margin-top: -10rem;
+margin-top: 3.5rem;
 `;
 export const SidebarRoute = styled(LinkR)`
 border-radius: 50px;

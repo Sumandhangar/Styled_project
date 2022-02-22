@@ -34,6 +34,7 @@ export const NavLogo = styled(LinkR)`
  font-size: 1.5rem;
  display: flex;
  align-items: center;
+ margin-left: 24px;
  font-weight: bold;
  text-decoration: none;
  &:hover{
@@ -69,23 +70,17 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
  height: 80px;
  color: white;
- font-size: large;
- font-weight: 400;
- &:hover{
-     color: #01bf71;
- }
  `;
 export const NavLinks = styled(LinkS)`
  display: flex;
  align-items: center;
  text-decoration: none;
- padding: 0 1.5rem;
+ padding: 0 1rem;
  height: 100%;
  cursor: pointer;
  &.active{
      border-bottom: 3px solid #01bf71;
  }
-
  `;
  export const NavBtn = styled.nav`
  display: flex;
