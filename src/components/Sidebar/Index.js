@@ -5,8 +5,8 @@ const Index = ({ isOpen, toggle}) => {
 
     
     return (
-        <SidebarContainer isOpen={isOpen} onClick={toggle}>
-            <Icon onClick={toggle}>
+        <SidebarContainer>
+            <Icon>
                 <CloseIcon />
             </Icon>
             <SidebarWrapper>

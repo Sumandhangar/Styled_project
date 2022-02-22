@@ -35,9 +35,8 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // import Contact from "./components/webcopy/Contact";
 // import Footers from "./components/webcopy/Footer";
 // import { Rays } from "../src/components/webcopy/Css";
-// ***************************************************
-import Index from './Pages/Index';
-
+// **********************************************
+import Index from './Pages/Index'
 
 function App() {
   return (
@@ -69,9 +68,10 @@ function App() {
     </Routes>
     <Footer /> */}
       {/* ******************************************** */}
-
+      {/* <Navbar />
+      <Sidebar /> */}
       <Index />
-      
+
     </>
   );
 }
