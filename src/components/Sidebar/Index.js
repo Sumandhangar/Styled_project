@@ -1,6 +1,9 @@
-import React from 'react'
-import { SidebarContainer, Icon, CloseIcon,SidebarWrapper,SidebarMenu,SidebarLink,SideBtnWrap,SidebarRoute } from './SidebarElements';
+import React from 'react';
+import {SidebarContainer, Icon, CloseIcon,SidebarWrapper,SidebarMenu,SidebarLink,SideBtnWrap,SidebarRoute } from './SidebarElements';
 const Index = ({ isOpen, toggle}) => {
+    console.log(isOpen)
+
+    
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
@@ -16,8 +19,9 @@ const Index = ({ isOpen, toggle}) => {
                     <SidebarRoute to='/signin'>Sign In</SidebarRoute>
                 </SideBtnWrap>
             </SidebarWrapper>
+      
         </SidebarContainer>
-    )
+    ) 
 }
 
 export default Index

@@ -36,7 +36,7 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // import Footers from "./components/webcopy/Footer";
 // import { Rays } from "../src/components/webcopy/Css";
 // ***************************************************
-import Index from './Pages/Index'
+import Index from './Pages/Index';
 
 
 function App() {
@@ -69,9 +69,9 @@ function App() {
     </Routes>
     <Footer /> */}
       {/* ******************************************** */}
-   <Router>
-     <Index />
-   </Router>
+
+      <Index />
+      
     </>
   );
 }
