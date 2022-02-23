@@ -18,21 +18,6 @@ export const homeObjOne = {
 }
 export const homeObjTwo = {
     id: 'work',
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: false,
-    topLine: 'Premium Bank',
-    headline: 'Unimited transaction with zero fee',
-    description: 'Free stock photos & videos you can use everywhere. Browse millions of high-quality royalty free stock images & copyright free pictures',
-    buttonLabel: 'Get Start',
-    imgStart: false,
-    alt: 'Car',
-    primary: false,
-    darkText: false,
-    shadow: false
-}
-export const homeObjThree = {
-    id: 'contact',
     lightBg: true,
     lightText: false,
     lightTextDesc: true,
@@ -45,4 +30,19 @@ export const homeObjThree = {
     primary: false,
     darkText: true,
     shadow: true
+}
+export const homeObjThree = {
+    id: 'contact',
+    lightBg: false,
+    lightText: true,
+    lightTextDesc: false,
+    topLine: 'Premium Bank',
+    headline: 'Unimited transaction with zero fee',
+    description: 'Free stock photos & videos you can use everywhere. Browse millions of high-quality royalty free stock images & copyright free pictures',
+    buttonLabel: 'Get Start',
+    imgStart: false,
+    alt: 'Car',
+    primary: false,
+    darkText: false,
+    shadow: false
 }

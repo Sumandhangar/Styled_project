@@ -19,8 +19,8 @@ const Index = () => {
       <HeroSection />
       <InfoSection {...homeObjOne} />
       <Services/>
-      <InfoSection {...homeObjThree} />
       <InfoSection {...homeObjTwo} />
+      <InfoSection {...homeObjThree} />
       <Footer/>
     </>
   )
