@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from '../Sidebar/Index';
 import Navbar from '../Navbar/Navbar';
+import HeroSection from "../Navbar/HeroSection";
 import InfoSection from '../InfoSection/Index';
 import { Nav, homeObjOne, homeObjTwo, homeObjThree } from '../InfoSection/Data';
 import Footer from './Footer'
@@ -14,7 +15,8 @@ const Index = () => {
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} {...Nav} />
+      <Navbar toggle={toggle} {...Nav }  />
+      <HeroSection />
       <InfoSection {...homeObjOne} />
       <Services/>
       <InfoSection {...homeObjThree} />

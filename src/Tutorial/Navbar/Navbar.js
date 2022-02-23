@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { Nav, NavbarContainer, MobileIcon, NavLogo, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink } from "./Navbarelements";
 import { FaBars } from "react-icons/fa";
-import HeroSection from "./HeroSection";
 import {IconContext} from 'react-icons/lib';
 import {animateScroll as scroll}from "react-scroll";
 
@@ -67,7 +66,7 @@ const Navbar = ({ toggle }) => {
                     <NavBtn><NavBtnLink to='/Signin'>Sign In</NavBtnLink></NavBtn>
                 </NavbarContainer>
             </Nav>
-            <HeroSection />
+            
             </IconContext.Provider>
         </>
     );
