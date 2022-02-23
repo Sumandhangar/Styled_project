@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import Image from '../../assets/img/car.svg';
+import Image  from '../../assets/img/car.svg';
 const Index = ({ lightBg, id, imgStart, topLine, lightText, headline, darkText, description, lightTextDesc, shadow, buttonLabel, alt, primary, dark, dark2 }) => {
   return (
     <>

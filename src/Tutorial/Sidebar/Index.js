@@ -11,12 +11,12 @@ const Index = ({ isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                <SidebarMenu>
-                <SidebarLink to='about'>About</SidebarLink>
-                <SidebarLink to='work'>Work</SidebarLink>
-                <SidebarLink to='contact'>Contact</SidebarLink>
+                <SidebarLink to='about'onClick={toggle} >About</SidebarLink>
+                <SidebarLink to='work' onClick={toggle} >Work</SidebarLink>
+                <SidebarLink to='contact' onClick={toggle} >Contact</SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
-                    <SidebarRoute to='/signin'>Sign In</SidebarRoute>
+                    <SidebarRoute to='/signin' onClick={toggle} >Sign In</SidebarRoute>
                 </SideBtnWrap>
             </SidebarWrapper>
       

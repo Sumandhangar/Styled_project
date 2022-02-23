@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import Video from '../../Pages/video.mp4'
+import Video from '../Pages/video.mp4'
 import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
 import {Link} from 'react-scroll';
 
@@ -19,7 +19,7 @@ const HeroSection = () => {
             <HeroH1>Virtual Banking Made Easy</HeroH1>
             <HeroP>Free stock photos & videos you can use everywhere. Browse millions of high-quality royalty free stock images & copyright free pictures.
           </HeroP>
-          <HeroBtnWrapper><Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover}>Get Started{hover ? <ArrowForward /> : <ArrowRight />}</Button></HeroBtnWrapper>
+          <HeroBtnWrapper><Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover}>Get Started{hover ? <ArrowForward className='text-dark' /> : <ArrowRight className='text-dark'/>}</Button></HeroBtnWrapper>
         </HeroContent>
     </HeroContainer>
   )

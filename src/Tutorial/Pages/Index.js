@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Sidebar from '../components/Sidebar/Index';
-import Navbar from '../components/Navbar/Navbar';
-import InfoSection from '../components/InfoSection/Index';
-import { Nav, homeObjOne, homeObjTwo, homeObjThree } from '../components/InfoSection/Data';
+import Sidebar from '../Sidebar/Index';
+import Navbar from '../Navbar/Navbar';
+import InfoSection from '../InfoSection/Index';
+import { Nav, homeObjOne, homeObjTwo, homeObjThree } from '../InfoSection/Data';
 import Footer from './Footer'
 
 const Index = () => {

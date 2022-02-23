@@ -15,37 +15,35 @@ const Footer = () => {
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinsTitle>About Us</FooterLinsTitle>
-                <FooterLink to='/'>About Us</FooterLink>
+              <FooterLink to='/'>How it works</FooterLink>
                 <FooterLink to='/'>Career</FooterLink>
                 <FooterLink to='/'>Services</FooterLink>
                 <FooterLink to='/'>Terms of Services</FooterLink>
-                <FooterLink to='/'>How it works</FooterLink>
+                <FooterLink to='/'>Testimonials</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinsTitle>About Us</FooterLinsTitle>
-                <FooterLink to='/'>About Us</FooterLink>
-                <FooterLink to='/'>Career</FooterLink>
-                <FooterLink to='/'>Services</FooterLink>
-                <FooterLink to='/'>Terms of Services</FooterLink>
-                <FooterLink to='/'>How it works</FooterLink>
+              <FooterLinsTitle>Videos</FooterLinsTitle>
+                <FooterLink to='/'>Submit video</FooterLink>
+                <FooterLink to='/'>Ambassadors</FooterLink>
+                <FooterLink to='/'>Agency</FooterLink>
+                <FooterLink to='/'>Influencer</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinsTitle>About Us</FooterLinsTitle>
-                <FooterLink to='/'>About Us</FooterLink>
-                <FooterLink to='/'>Career</FooterLink>
+              <FooterLinsTitle>Contact Us</FooterLinsTitle>
+                <FooterLink to='/'>Contact</FooterLink>
+                <FooterLink to='/'>Support</FooterLink>
                 <FooterLink to='/'>Services</FooterLink>
-                <FooterLink to='/'>Terms of Services</FooterLink>
-                <FooterLink to='/'>How it works</FooterLink>
+                <FooterLink to='/'>Destinations</FooterLink>
+                <FooterLink to='/'>Sponsorship</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinsTitle>About Us</FooterLinsTitle>
-                <FooterLink to='/'>About Us</FooterLink>
-                <FooterLink to='/'>Career</FooterLink>
-                <FooterLink to='/'>Services</FooterLink>
-                <FooterLink to='/'>Terms of Services</FooterLink>
-                <FooterLink to='/'>How it works</FooterLink>
+              <FooterLinsTitle>Social Media</FooterLinsTitle>
+                <FooterLink to='/'>Instagram</FooterLink>
+                <FooterLink to='/'>Facebook</FooterLink>
+                <FooterLink to='/'>Twitter</FooterLink>
+                <FooterLink to='/'>Youtube</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>
