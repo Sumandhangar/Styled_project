@@ -36,7 +36,8 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // import Footers from "./components/webcopy/Footer";
 // import { Rays } from "../src/components/webcopy/Css";
 // **********************************************
-import Index from './Tutorial/Pages/Index'
+import Index from './Tutorial/Pages/Index';
+import Signin from "./Tutorial/Pages/Signin";
 
 function App() {
   return (
@@ -68,8 +69,11 @@ function App() {
     </Routes>
     <Footer /> */}
       {/* ******************************************** */}
-   
-      <Index />
+     
+   <Routes>
+   <Route exact path='/' exact element={<Index />} />
+   <Route exact path='/Signin' exact element={<Signin />} />
+   </Routes>
 
     </>
   );

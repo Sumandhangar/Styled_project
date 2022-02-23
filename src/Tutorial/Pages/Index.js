@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import InfoSection from '../InfoSection/Index';
 import { Nav, homeObjOne, homeObjTwo, homeObjThree } from '../InfoSection/Data';
 import Footer from './Footer'
+import Services from './Services'
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +16,9 @@ const Index = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} {...Nav} />
       <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
+      <Services/>
       <InfoSection {...homeObjThree} />
+      <InfoSection {...homeObjTwo} />
       <Footer/>
     </>
   )
