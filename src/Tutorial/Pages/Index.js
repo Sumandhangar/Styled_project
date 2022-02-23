@@ -20,7 +20,7 @@ const Index = () => {
       <InfoSection {...homeObjOne} />
       <Services/>
       <InfoSection {...homeObjTwo} />
-      <InfoSection {...homeObjThree} />
+       <InfoSection {...homeObjThree} />
       <Footer/>
     </>
   )

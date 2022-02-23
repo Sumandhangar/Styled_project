@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 
 import {
   BrowserRouter as Router,
@@ -38,8 +38,8 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // **********************************************
 import Index from './Tutorial/Pages/Index';
 import Signin from "./Tutorial/Pages/Signin";
-import Navbar from "./Tutorial/Navbar/Navbar";
 function App() {
+
   return (
     <>
       {/* <div className="container-fluid rays"><Navbar /><Banner /></div>
@@ -69,7 +69,7 @@ function App() {
     </Routes>
     <Footer /> */}
       {/* ******************************************** */}
-      <Navbar/>
+    
    <Routes>
    <Route exact path='/' exact element={<Index />} />
    <Route exact path='/Signin' exact element={<Signin />} />
