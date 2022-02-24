@@ -31,7 +31,7 @@ const Navbar = ({ toggle }) => {
                     <MobileIcon onClick={toggle} ><FaBars /></MobileIcon>
                     <NavMenu>
                         <NavItem ><NavLinks 
-                          to='/'  onClick={toggleHome}>Home</NavLinks></NavItem>
+                          to='/home'  onClick={toggleHome}>Home</NavLinks></NavItem>
                         <NavItem><NavLinks 
                         to='about'
                         smooth={true}
