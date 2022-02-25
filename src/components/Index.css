@@ -1,0 +1,26 @@
+
+body{
+    background-color: rgb(202, 237, 248);
+}
+.box{
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+.image{
+    height: 100%;
+    width: 50%;
+    border-radius: 5px;
+    margin: 0;
+}
+.status{
+    display: flex;
+    justify-content: space-between;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 7px;
+
+}
