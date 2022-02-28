@@ -16,7 +16,7 @@ const HeroSection = () => {
             <Videobg autoPlay loop muted src={Video} type='video/mp4' />
         </Herobg>
         <HeroContent>
-            <HeroH1>Banking Made Easy</HeroH1>
+            <HeroH1>Virtual Banking Made Easy</HeroH1>
             <HeroP>Free stock photos & videos you can use everywhere. Browse millions of high-quality royalty free stock images & copyright free pictures.
           </HeroP>
           <HeroBtnWrapper><Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover}>Get Started{hover ? <ArrowForward className='text-dark' /> : <ArrowRight className='text-dark'/>}</Button></HeroBtnWrapper>
