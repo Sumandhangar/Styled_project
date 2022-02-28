@@ -26,19 +26,17 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // import Contact from "./components/web/Contact";
 // import Footer from "./components/web/Footer";
 // *****************************************
-// import Navbar from "./components/webcopy/Navbar";
-// import Banner from "./components/webcopy/Banner";
-// import About from "./components/webcopy/About";
-// import Work from "./components/webcopy/Work";
-// import Json from "./components/webcopy/Json";
-// import Product from "./components/webcopy/Product";
-// import Contact from "./components/webcopy/Contact";
-// import Footers from "./components/webcopy/Footer";
-// import { Rays } from "../src/components/webcopy/Css";
+import Navbar from "./components/webcopy/Navbar";
+import Banner from "./components/webcopy/Banner";
+import About from "./components/webcopy/About";
+import Work from "./components/webcopy/Work";
+import Json from "./components/webcopy/Json";
+import Product from "./components/webcopy/Product";
+import Contact from "./components/webcopy/Contact";
+import Footers from "./components/webcopy/Footer";
+import { Rays } from "../src/components/webcopy/Css";
 // ***************************************************
-import Navbar from './components/Navbar/Navbar'
-import Index from './Pages/Index'
-import Sidebar from './components/Sidebar/Index'
+
 
 function App() {
   return (
@@ -53,13 +51,13 @@ function App() {
       </div> */}
       {/* ************************************************** */}
 
-      {/* <Rays className="container-fluid"><Json /><Banner /></Rays>
+      <Rays className="container-fluid"><Json /><Banner /></Rays>
       <div className="container">
         <section id="about"><About /></section>
         <section id="work"><Work /></section>
         <section id="product"><Product /></section>
       </div>
-      <div className="container-fluid"><section id="contact"><Contact /></section><Footers /></div> */}
+      <div className="container-fluid"><section id="contact"><Contact /></section><Footers /></div>
       {/* ************************************************** */}
       {/* <Navigation />
     <Routes>
@@ -72,9 +70,7 @@ function App() {
       {/* ******************************************** */}
       {/* <Navbar />
       <Sidebar /> */}
-<Routes>
- <Route exact path='/' excat element={<Index />} />
-</Routes>
+
   
     </>
   );
