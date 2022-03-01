@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Index from './components/Index'
+import Index from './components/Axios'
+// import Popup from './components/Popup'
 
 function App() {
 
@@ -11,5 +12,4 @@ function App() {
    </>
   );
 }
-
 export default App;
