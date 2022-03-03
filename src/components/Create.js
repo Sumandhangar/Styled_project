@@ -1,47 +1,56 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import './Popup.css'
 
 export default function Create(props) {
-    const [userId, setUserid] = useState();
     const [id, setId] = useState();
-    const [title, setTitle] = useState('');
-    const [completed, setcompleted] = useState(false);
-    const submitData = {userId,id,title,completed}
-    const postData = () =>{
+    const [name, setName] = useState();
+    const [username, setUsername] = useState();
+    const [email, setEmail] = useState();
+    const [address, setAddress] = useState('');
+    const [checkbox, setCheckbox] = useState(false);
+    const submitData = { id,name,username, email,address }
+    const postData = () => {
         console.log(submitData)
-        axios.post(`https://jsonplaceholder.typicode.com/todos`,submitData)
-        .then((res) =>{
-            console.log(res)
-        })
-        .catch((err) =>{
-            console.log(err)
-        })
+        axios.post(`https://621f2e89311a70591403536e.mockapi.io/database`, submitData)
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
-       
+// *****************************************
     return (
         <div>
             <Form className="create-form popup-box mt-5">
                 <div className='box'>
                     <span className="close-icon" onClick={props.handleClose}>x</span>
                     <Form.Field>
-                    <label>First Name</label>
-                    <input placeholder='First Name' onChange={(e) => setUserid(e.target.value)}/>
-                </Form.Field>
-                <Form.Field>
-                    <label>Last Name</label>
-                    <input placeholder='Last Name' onChange={(e) => setId(e.target.value)}/>
-                </Form.Field>
-                <Form.Field>
-                    <label>Title</label>
-                    <input placeholder='Title' onChange={(e) => setTitle(e.target.value)}/>
-                </Form.Field>
-                <Form.Field>
-                    {/* <Checkbox label='I agree to the Terms and Conditions' onChange={(e) => setCheckbox(!checkbox)}/> */}
-                    <input type='checkbox' onChange={(e) => setcompleted(!completed)}/>Remember
-                </Form.Field>
-                <Button onClick={postData} type='submit' >Submit</Button>
+                        <label>Id</label>
+                        <input placeholder='UserId' className='ml-5' onChange={(e) => setId(e.target.value)} />
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Name</label>
+                        <input placeholder='name' className='ml-5' onChange={(e) => setName(e.target.value)} />
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Username</label>
+                        <input placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Email</label>
+                        <input placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Address</label>
+                        <input placeholder='address' onChange={(e) => setAddress(e.target.value)} />
+                    </Form.Field>
+                  <Form.Field>
+                    <input type='checkbox' onChange={() => setCheckbox(!checkbox)}/>Remember
+                    </Form.Field>
+                    <Button onClick={postData} type='submit' >Submit</Button>
                 </div>
             </Form>
         </div>
