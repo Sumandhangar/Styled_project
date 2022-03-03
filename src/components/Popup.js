@@ -28,15 +28,15 @@ const Popup = props => {
           <span className="close-icon" onClick={props.handleClose}>x</span>
           <Form.Field>
             <label>First Name</label>
-            <input type='text' value={name} onChange={(e) => setName(e.target.value)} />
+            <input type='text'  onChange={(e) => setName(e.target.value)} />
           </Form.Field>
           <Form.Field>
             <label>Last Name</label>
-            <input placeholder='Last Name'  type='text' value={'dfds'} onChange={(e) => setUsername(e.target.value)} />
+            <input placeholder='Last Name'  type='text'  onChange={(e) => setUsername(e.target.value)} />
           </Form.Field>
           <Form.Field>
             <label>Email</label>
-            <input placeholder='email'  type='email' value={'dfds'} onChange={(e) => setEmail(e.target.value)} />
+            <input placeholder='email'  type='email'  onChange={(e) => setEmail(e.target.value)} />
           </Form.Field>
           {/* <Form.Field>
             <Checkbox label='I agree to the Terms and Conditions' onChange={(e) => setCheckbox(!checkbox)} />

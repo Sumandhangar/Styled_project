@@ -27,7 +27,7 @@ const Axios = () => {
     const setData = (curElem) => {
     console.log(curElem)
  }
-    //   console.log(click)
+
     // *****************************for Create new card********************
 
     
