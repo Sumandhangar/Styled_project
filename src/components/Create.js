@@ -1,9 +1,10 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import './Popup.css'
 
 export default function Create(props) {
+    const [data, setData] = useState([]);
     const [userId, setUserid] = useState('');
     const [id, setId] = useState('');
     const [title, setTitle] = useState('');
@@ -13,14 +14,16 @@ export default function Create(props) {
         const submitData = {userId,id,title,completed}
         console.log(submitData)
         axios.post(`https://jsonplaceholder.typicode.com/todos`, submitData)
+
         .then((res) =>{
             console.log(res)
+           
         })
         .catch((err) =>{
             console.log(err)
         })
     }
-   
+       
     return (
         <div>
             <Form className="create-form popup-box mt-5">
