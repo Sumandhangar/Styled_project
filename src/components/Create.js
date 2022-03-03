@@ -3,8 +3,6 @@ import { useFormik } from "formik";
 import axios from "axios";
 const Create = (props) => {
     const [checkbox, setCheckbox] = useState(true);
-    
-
   const validateEmployee = (empData) => {
     const errors = {};
 

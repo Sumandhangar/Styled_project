@@ -23,7 +23,11 @@ const Axios = () => {
     };
     useEffect(() => getRepo(), []);
     // ***************************For Update********************************
-
+//    const [data, setData] = useState()
+    const setData = (curElem) => {
+    console.log(curElem)
+ }
+    //   console.log(click)
     // *****************************for Create new card********************
 
     
@@ -43,6 +47,7 @@ const Axios = () => {
                     {create && <Create handleClose={toggleform} />}
                 </div>
                 {repo.map((curElem) => {
+                    
                     return (
                         <>
                             <div className="col-10 col-md-4 mt-5">
@@ -56,9 +61,10 @@ const Axios = () => {
                                             <span className="text-left">{curElem.username}</span>
                                             <p>{curElem.email}</p>
                                             <div className="mt-2 text-white status">
-                                                <div className="about text-dark rounded" onClick={(toggleupdate)}>
+                                                
+                                                <div className="about text-dark rounded" onClick={toggleupdate}>
                                                     <span className="articles">Edit</span>
-                                                    <span className="number1"><FaEdit /></span>
+                                                    <span className="number1" onClick={() => setData(curElem)}><FaEdit /></span>
                                                 </div>
                                                 {update && <Popup handleClose={toggleupdate} />}
                                                 <div className="about text-dark rounded">
