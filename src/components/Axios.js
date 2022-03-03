@@ -49,14 +49,14 @@ const Axios = () => {
                                 <div className="card p-2">
                                     <div className="d-flex text-left">
                                         <div className="image bg-dark">
-                                            <img src='' className="rounded w-100 bg-dark" style={{ height: '150px', width: '250px' }} />
+                                            <img src='' alt='myimage' className="rounded w-100 bg-dark" style={{ height: '150px', width: '250px' }} />
                                         </div>
                                         <div className="ml-3 w-100">
                                             <h4 className="text-dark p-0 m-0">{curElem.id}</h4>
                                             <span className="text-left">{curElem.username}</span>
                                             <p>{curElem.email}</p>
                                             <div className="mt-2 text-white status">
-                                                <div className="about text-dark rounded" onClick={toggleupdate}>
+                                                <div className="about text-dark rounded" onClick={(toggleupdate)}>
                                                     <span className="articles">Edit</span>
                                                     <span className="number1"><FaEdit /></span>
                                                 </div>

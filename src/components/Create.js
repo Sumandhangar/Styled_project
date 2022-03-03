@@ -1,58 +1,133 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Form } from 'semantic-ui-react'
-import axios from 'axios';
-import './Popup.css'
+import React, { useState } from "react";
+import { useFormik } from "formik";
+import axios from "axios";
+const Create = (props) => {
+    const [checkbox, setCheckbox] = useState(true);
+    
 
-export default function Create(props) {
-    const [id, setId] = useState();
-    const [name, setName] = useState();
-    const [username, setUsername] = useState();
-    const [email, setEmail] = useState();
-    const [address, setAddress] = useState('');
-    const [checkbox, setCheckbox] = useState(false);
-    const submitData = { id,name,username, email,address }
-    const postData = () => {
-        console.log(submitData)
-        axios.post(`https://621f2e89311a70591403536e.mockapi.io/database`, submitData)
-            .then((res) => {
-                console.log(res)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+  const validateEmployee = (empData) => {
+    const errors = {};
+
+    if (!empData.name) {
+      errors.name = "Please Enter Username";
+    } else if (empData.name.length > 20) {
+      errors.name = "Name cannot exceed 20 characters";
     }
-// *****************************************
-    return (
-        <div>
-            <Form className="create-form popup-box mt-5">
-                <div className='box'>
-                    <span className="close-icon" onClick={props.handleClose}>x</span>
-                    <Form.Field>
-                        <label>Id</label>
-                        <input placeholder='UserId' className='ml-5' onChange={(e) => setId(e.target.value)} />
-                    </Form.Field>
-                    <Form.Field>
-                        <label>Name</label>
-                        <input placeholder='name' className='ml-5' onChange={(e) => setName(e.target.value)} />
-                    </Form.Field>
-                    <Form.Field>
-                        <label>Username</label>
-                        <input placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
-                    </Form.Field>
-                    <Form.Field>
-                        <label>Email</label>
-                        <input placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
-                    </Form.Field>
-                    <Form.Field>
-                        <label>Address</label>
-                        <input placeholder='address' onChange={(e) => setAddress(e.target.value)} />
-                    </Form.Field>
-                  <Form.Field>
-                    <input type='checkbox' onChange={() => setCheckbox(!checkbox)}/>Remember
-                    </Form.Field>
-                    <Button onClick={postData} type='submit' >Submit</Button>
-                </div>
-            </Form>
+    if (!empData.username) {
+      errors.username = "Please Enter Username";
+    } else if (empData.username.length > 20) {
+      errors.username = "Name cannot exceed 20 characters";
+    }
+    // const exists = empData.state.email.find(email => email === empData.email);
+    if (!empData.email) {
+      errors.email = "Please Enter Email ID";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(empData.email)
+    ) {
+      errors.email = "Invalid email address";
+    }
+    if (!empData.address) {
+      errors.address = "Please Enter Employee address";
+    }
+    return errors;
+  };
+  const formik = useFormik({
+    initialValues: {
+      id: "",
+      name: "",
+      username: "",
+      email: "",
+      address: "",
+    //   checkbox: checkbox
+    },
+    validate: validateEmployee,
+    onSubmit: (values) => {
+      axios
+        .post(
+          `https://621f2e89311a70591403536e.mockapi.io/database`,values
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  });
+
+  return (
+    <>
+      <form onSubmit={formik.handleSubmit} className="popup-box mt-5">
+        <div className="box">
+          <span className="close-icon" onClick={props.handleClose}>
+            x
+          </span>
+         
+            <label htmlFor="Name">Name : </label>
+            <input
+              type="text"
+              name="name"
+              id="Name"
+              value={formik.touched.name && formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></input>
+            {formik.errors.name ? (
+              <span style={{ color: "red" }}>{formik.errors.name}</span>
+            ) : null}
+            <br></br>
+            <p></p>
+          
+            <label htmlFor="Name">Username : </label>
+            <input
+              type="text"
+              name="username"
+              id="Name"
+              value={formik.values.username}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></input>
+            {formik.errors.username ? (
+              <span style={{ color: "red" }}>{formik.errors.username}</span>
+            ) : null}
+            <br></br>
+            <p></p>
+          
+            <label htmlFor="EmailId">Employee Email ID : </label>
+            <input
+              type="text"
+              name="email"
+              id="EmailId"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></input>
+            {formik.errors.email ? (
+              <span style={{ color: "red" }}>{formik.errors.email}</span>
+            ) : null}
+            <br></br>
+            <p></p>
+          <label htmlFor="address">Employee address : </label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            value={formik.values.address}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          ></input>
+          {formik.errors.address ? (
+            <span style={{ color: "red" }}>{formik.errors.address}</span>
+          ) : null}
+          <p></p>
+          <br/>
+          <input type="checkbox" onChange={(e) => setCheckbox(!checkbox)} />
+          Remember<br/>
+          <button type="submit">Create</button>
         </div>
-    )
-}
+      </form>
+    </>
+  );
+};
+
+export default Create;
