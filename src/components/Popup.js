@@ -1,50 +1,52 @@
-import React, { useState} from 'react';
+import React, { useState,useEffect} from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import './Popup.css'
-
-const Popup = props => {
-//  ***************************************
-  const [name, setName] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  //   const [email, setEmail] = useState('');
-  // const [checkbox, setCheckbox] = useState(false);
-  const postData = () => {
-    axios.post(`https://621f2e89311a70591403536e.mockapi.io/database`, {
-      name,username,email
-    })
-  }
-  const setData = (curElem) => {
-    console.log(curElem)
- }
+import StudentForm from './Form'
 
 
 
+
+const Popup = (props) => {
+    const[formValues,setFormValues] = useState({
+      id: '',name:'',username:'',email:'',address:'',
+    });
+
+   const onSubmit = (studentObject) =>{
+     axios.put("https://621f2e89311a70591403536e.mockapi.io/database" + props.match.params.id,studentObject)
+     .then((res)=>{
+       if( res.status===200){
+         alert("user updated successfully");
+         props.history.push("/Axios")
+       }else Promise.reject();
+     })
+     .catch((err)=> alert("Something went wrong"))
+   }
+  
+
+  //  useEffect(() => {
+  //    axios.get("https://621f2e89311a70591403536e.mockapi.io/database" + props.match.params.id)
+  //    .then((res) => {
+  //      const{name,username,email,address} = res.data;
+  //      setFormValues({name,username,email,address});
+  //    })
+  //    .catch((err) => console.log(err));
+  //  }, [])
   return (
     <>
-      <Form className="create-form popup-box mt-5 text-center">
+      <div className="create-form popup-box  text-center">
         <div className='box'>
           <span className="close-icon" onClick={props.handleClose}>x</span>
-          <Form.Field>
-            <label>First Name</label>
-            <input type='text'  onChange={(e) => setName(e.target.value)} />
-          </Form.Field>
-          <Form.Field>
-            <label>Last Name</label>
-            <input placeholder='Last Name'  type='text'  onChange={(e) => setUsername(e.target.value)} />
-          </Form.Field>
-          <Form.Field>
-            <label>Email</label>
-            <input placeholder='email'  type='email'  onChange={(e) => setEmail(e.target.value)} />
-          </Form.Field>
-          {/* <Form.Field>
-            <Checkbox label='I agree to the Terms and Conditions' onChange={(e) => setCheckbox(!checkbox)} />
-          </Form.Field> */}
-          <Button onClick={postData} type='submit'>Submit</Button>
-          {/* <button onClick={() => setData(curElem)}>Data</button> */}
+          <StudentForm
+      initialValues={formValues}
+      onSubmit={onSubmit}
+      enableReinitialize
+    >
+      Update Student
+    </StudentForm>
         </div>
-      </Form>
+        </div>
+      
     </>
   )
 }
