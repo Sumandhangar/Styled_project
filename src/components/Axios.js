@@ -5,6 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import { BiShow } from 'react-icons/bi';
 import { AiFillDelete } from 'react-icons/ai'
 import Popup from './Popup'
+import Update from './Update'
 import Create from './Create'
 
 const Axios = (props) => {
@@ -44,9 +45,18 @@ const onDelete = (id) => {
         setCreate(!create)
     }
 
-    const toggleupdate = () => {
+    const toggleupdate = (res) => {
         setUpdate(!update)
+        console.log(res)
+        let { id, name, username, email,address } = res;
+        localStorage.setItem('ID', id);
+        localStorage.setItem('name', name);
+        localStorage.setItem('username', username);
+        localStorage.setItem('email', email);
+        localStorage.setItem('address', address);
     }
+       
+
     return (
         <div className="container mt-5">
             <div className="row text-center">
@@ -67,11 +77,11 @@ const onDelete = (id) => {
                                 <p className="p-0 m-0">{res.email}</p>
                                 <p className="p-0 m-0">{res.address}</p>
                                 <div className="mt-2 text-white status">
-                                    <div className="about rounded bg-primary text-white" onClick={toggleupdate}>
+                                    <div className="about rounded bg-primary text-white" onClick={() => toggleupdate(res)}>
                                         <span className="articles">Edit</span>
                                         {/* <span className="number1"><FaEdit /></span> */}
                                     </div>
-                                    {update && <Popup handleClose={toggleupdate} />}
+                                    {update && <Update handleClose={toggleupdate} />}
                                     <div className="about text-white rounded bg-success">
                                         <span className="articles">Show</span>
                                         {/* <span className="number1"><BiShow /></span> */}

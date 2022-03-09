@@ -4,39 +4,56 @@ import axios from 'axios';
 import  './Popup.css'
 
 
-export default function Update() {
-    const [name, setName] = useState('');
-    const [username, setusername] = useState('');
+export default function Update(props) {
     const [id, setID] = useState(null);
-    // const [name, setName] = useState('');
-    // const [username, setUsername] = useState('');
-    // const [email, setEmail] = useState(false);
+    const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
     
     useEffect(() => {
       setID(localStorage.getItem('ID'))
       setName(localStorage.getItem('name'));
       setUsername(localStorage.getItem('username'));
       setEmail(localStorage.getItem('email'))
+      setAddress(localStorage.getItem('email'))
 }, []);
+
+const updateAPIData = () => {
+    axios.put(`https://621f2e89311a70591403536e.mockapi.io/database/${id}`, {
+       name,
+        username,
+         email,
+         address
+	})
+}
  
     return (
-        <div>
+        <div className="create-form popup-box  text-center">
+        <div className='box'>
+          <span className="close-icon" onClick={props.handleClose}>x</span>
             <Form className="create-form popup-box" style={{}}>
                 <div className='box'>
                 <Form.Field>
-                    <label>First Name</label>
-                    <input placeholder='First Name' onChange={(e) => setName(e.target.value)}/>
+                    <label>Name</label>
+                    <input placeholder='name'  value={name} onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
-                    <input placeholder='Last Name' onChange={(e) => setusername(e.target.value)}/>
+                    <label>UserName</label>
+                    <input placeholder='User Name'  value={username} onChange={(e) => setUsername(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <Checkbox label='I agree to the Terms and Conditions' onChange={(e) => setCheckbox(!checkbox)}/>
+                    <label>Email</label>
+                    <input placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </Form.Field>
-                <Button type='submit'>Updasdste</Button>
+                <Form.Field>
+                    <label>Address</label>
+                    <input placeholder='address' value={address} onChange={(e) => setAddress(e.target.value)}/>
+                </Form.Field>
+                <Button type='submit' onClick={updateAPIData}>Updasdste</Button>
                 </div>
             </Form>
+        </div>
         </div>
     )
 }
