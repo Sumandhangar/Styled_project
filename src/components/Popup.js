@@ -13,7 +13,7 @@ const Popup = (props) => {
     });
 
    const onSubmit = (studentObject) =>{
-     axios.put("https://621f2e89311a70591403536e.mockapi.io/database" + props.match.params.id,studentObject)
+     axios.put("https://62289f859fd6174ca82a068c.mockapi.io/database" + props.match.params.id,studentObject)
      .then((res)=>{
        if( res.status===200){
          alert("user updated successfully");
@@ -25,7 +25,7 @@ const Popup = (props) => {
   
 
   //  useEffect(() => {
-  //    axios.get("https://621f2e89311a70591403536e.mockapi.io/database" + props.match.params.id)
+  //    axios.get("https://62289f859fd6174ca82a068c.mockapi.io/database" + props.match.params.id)
   //    .then((res) => {
   //      const{name,username,email,address} = res.data;
   //      setFormValues({name,username,email,address});

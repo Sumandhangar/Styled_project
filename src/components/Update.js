@@ -20,7 +20,7 @@ export default function Update(props) {
 }, []);
 
 const updateAPIData = () => {
-    axios.put(`https://621f2e89311a70591403536e.mockapi.io/database/${id}`, {
+    axios.put(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`, {
        name,
         username,
          email,

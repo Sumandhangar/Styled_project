@@ -16,7 +16,7 @@ const Axios = (props) => {
  
 
     useEffect(() => {
-        axios.get("http://621f2e89311a70591403536e.mockapi.io/database")
+        axios.get("https://62289f859fd6174ca82a068c.mockapi.io/database")
             .then(({ data }) => {
                 setRepo(data);
             })
@@ -27,7 +27,7 @@ const Axios = (props) => {
     // ***************************For Update********************************
     
 const onDelete = (id) => {
-    axios.delete(`http://621f2e89311a70591403536e.mockapi.io/database/${id}`)
+    axios.delete(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`)
     .then((id) => {
                 if (id.status === 200) {
                   alert("Student successfully deleted");

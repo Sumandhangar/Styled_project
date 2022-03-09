@@ -8,7 +8,7 @@ const Create = (props) => {
   const [formValues,setFormValues] = useState({
     name:'',username:'',email:'',address:''})
     const onSubmit = studentObject =>{
-      axios.post('https://621f2e89311a70591403536e.mockapi.io/database', studentObject)
+      axios.post('https://62289f859fd6174ca82a068c.mockapi.io/database', studentObject)
       .then(res =>{
         if(res.status === 200){
           alert("user created successfully")
