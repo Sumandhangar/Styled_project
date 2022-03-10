@@ -13,7 +13,7 @@ const StudentForm = (props) => {
     address: Yup.string().required("Rquired"),
   });
 
-
+//  console.log(props)
   return (
     <div className="form-wrapper popup-box ">
       <div className="box">

@@ -26,6 +26,13 @@ const updateAPIData = () => {
          email,
          address
 	})
+    .then((id) => {
+        if (id.status === 200) {
+          alert("Student updated successfully");
+          window.location.reload();
+        } else Promise.reject();
+      })
+      .catch((err) => alert("Something went wrong"));
 }
  
     return (
@@ -34,23 +41,23 @@ const updateAPIData = () => {
           <span className="close-icon" onClick={props.handleClose}>x</span>
             <Form className="create-form popup-box" style={{}}>
                 <div className='box'>
-                <Form.Field>
-                    <label>Name</label>
-                    <input placeholder='name'  value={name} onChange={(e) => setName(e.target.value)}/>
+                <Form.Field className='d-flex mb-3'>
+                <label htmlFor="name" className="pr-5">Name</label>
+                    <input placeholder='name' className='form-control w-75 ml-5'  value={name} onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
-                <Form.Field>
-                    <label>UserName</label>
-                    <input placeholder='User Name'  value={username} onChange={(e) => setUsername(e.target.value)}/>
+                <Form.Field className='d-flex mb-3'>
+                <label htmlFor="name" className="pr-5">Username</label>
+                    <input placeholder='User Name'className='form-control w-75 ml-3'  value={username} onChange={(e) => setUsername(e.target.value)}/>
                 </Form.Field>
-                <Form.Field>
-                    <label>Email</label>
-                    <input placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <Form.Field className='d-flex mb-3'>
+                <label htmlFor="name" className="pr-5">Email</label>
+                    <input placeholder='Email' className='form-control w-75 ml-5' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </Form.Field>
-                <Form.Field>
-                    <label>Address</label>
-                    <input placeholder='address' value={address} onChange={(e) => setAddress(e.target.value)}/>
+                <Form.Field className='d-flex mb-3'>
+                <label htmlFor="name" className="pr-4">Address</label>
+                    <input placeholder='address' className='form-control w-75 ml-5' value={address} onChange={(e) => setAddress(e.target.value)}/>
                 </Form.Field>
-                <Button type='submit' onClick={updateAPIData}>Updasdste</Button>
+                <Button type='submit' className='btn btn-success' onClick={updateAPIData}>Updasdste</Button>
                 </div>
             </Form>
         </div>

@@ -24,27 +24,24 @@ const Axios = (props) => {
                 console.log(error)
             });
     }, []);
-    // ***************************For Update********************************
+    // ***************************For Delete ********************************
     
 const onDelete = (id) => {
     axios.delete(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`)
     .then((id) => {
                 if (id.status === 200) {
                   alert("Student successfully deleted");
-                 
                   window.location.reload();
-                } else Promise.reject();
+                } else alert("Error")
               })
               .catch((err) => alert("Something went wrong"));
   }
  
     // *****************************for Create new card********************
-
-
     const toggleform = () => {
         setCreate(!create)
     }
-
+//  ********************** for update form *************************
     const toggleupdate = (res) => {
         setUpdate(!update)
         console.log(res)
@@ -66,12 +63,12 @@ const onDelete = (id) => {
                 </div>
                 {repo.map((res,i) => (
                 <div className="col-10 col-md-4 mt-5" obj={res} key={i}>
-                    <div className="card p-2" >
-                            <div className="d-flex text-left">
-                            <div className="image bg-dark">
+                    <div className="card p-2 h-100">
+                            <div className="d-flex text-left h-100">
+                            <div className="image bg-dark h-100">
                                 <img src='' alt='myimage' className="rounded w-100 bg-dark" style={{ height: '150px', width: '250px' }} />
                             </div>
-                            <div className="ml-3 w-100" >
+                            <div className="ml-3 w-100 overflow-hidden" >
                                 <p className="p-0 m-0">{res.id}</p>
                                 <p className="p-0 m-0">{res.name}</p>
                                 <p className="p-0 m-0">{res.email}</p>
@@ -81,7 +78,7 @@ const onDelete = (id) => {
                                         <span className="articles">Edit</span>
                                         {/* <span className="number1"><FaEdit /></span> */}
                                     </div>
-                                    {update && <Update handleClose={toggleupdate} />}
+                                    {update && <Update handleClose={toggleupdate}initialValues={res.Objest} />}
                                     <div className="about text-white rounded bg-success">
                                         <span className="articles">Show</span>
                                         {/* <span className="number1"><BiShow /></span> */}
