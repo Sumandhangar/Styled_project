@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import  './Popup.css'
+import { boolean } from 'yup/lib/locale';
 
 
 export default function Update(props) {
@@ -10,6 +11,7 @@ export default function Update(props) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
+    const [checkbox, setCheckbox] = useState(false);
     
     useEffect(() => {
       setID(localStorage.getItem('ID'))
@@ -17,6 +19,7 @@ export default function Update(props) {
       setUsername(localStorage.getItem('username'));
       setEmail(localStorage.getItem('email'))
       setAddress(localStorage.getItem('email'))
+      setCheckbox(localStorage.getItem('checkbox'))
 }, []);
 
 const updateAPIData = () => {
@@ -24,7 +27,8 @@ const updateAPIData = () => {
        name,
         username,
          email,
-         address
+         address,
+         checkbox
 	})
     .then((id) => {
         if (id.status === 200) {
@@ -57,7 +61,11 @@ const updateAPIData = () => {
                 <label htmlFor="name" className="pr-4">Address</label>
                     <input placeholder='address' className='form-control w-75 ml-5' value={address} onChange={(e) => setAddress(e.target.value)}/>
                 </Form.Field>
-                <Button type='submit' className='btn btn-success' onClick={updateAPIData}>Updasdste</Button>
+                <Form.Field className='d-flex justify-content-center mb-3'>
+                    <input placeholder='checkbox' type='checkbox' className='mt-1' value={checkbox} onChange={(e) => setCheckbox(e.target.value)}/>
+                    <label htmlFor="checkbox" className="pl-2">Remember</label>
+                </Form.Field>
+                <Button type='submit' className='btn btn-success' onClick={updateAPIData}>Update</Button>
                 </div>
             </Form>
         </div>

@@ -11,6 +11,7 @@ const StudentForm = (props) => {
       .email("You have enter an invalid email address")
       .required("Rquired"),
     address: Yup.string().required("Rquired"),
+    checkbox: Yup.boolean().required("Rquired"),
   });
 
 //  console.log(props)
@@ -58,6 +59,11 @@ const StudentForm = (props) => {
                 className="d-block invalid-feedback"
                 component="span"
               />
+            </FormGroup>
+            <FormGroup className="d-flex justify-content-center mb-3">
+              <Field name="checkbox" type="checkbox"
+                className=" mt-1" />
+                 <label htmlFor='checkbox' className=" pl-2">Remember</label>
             </FormGroup>
             <Button variant="danger" size="lg"
               block="block" type="submit">

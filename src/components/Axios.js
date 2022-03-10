@@ -7,13 +7,14 @@ import { AiFillDelete } from 'react-icons/ai'
 import Popup from './Popup'
 import Update from './Update'
 import Create from './Create'
+import List from './List'
 
 const Axios = (props) => {
     // ******************For Fetch data from api ****************************
     const [repo, setRepo] = useState([]);
     const [create, setCreate] = useState(false);
     const [update, setUpdate] = useState(false);
- 
+    const [list, setList] = useState(false);
 
     useEffect(() => {
         axios.get("https://62289f859fd6174ca82a068c.mockapi.io/database")
@@ -32,7 +33,7 @@ const onDelete = (id) => {
                 if (id.status === 200) {
                   alert("Student successfully deleted");
                   window.location.reload();
-                } else alert("Error")
+                } else window.confirm("Error")
               })
               .catch((err) => alert("Something went wrong"));
   }
@@ -41,16 +42,27 @@ const onDelete = (id) => {
     const toggleform = () => {
         setCreate(!create)
     }
-//  ********************** for update form *************************
-    const toggleupdate = (res) => {
-        setUpdate(!update)
-        console.log(res)
-        let { id, name, username, email,address } = res;
+    const toggledisplay = (res) => {
+        setList(!list)
+        let { id, name, username, email,address,checkbox } = res;
         localStorage.setItem('ID', id);
         localStorage.setItem('name', name);
         localStorage.setItem('username', username);
         localStorage.setItem('email', email);
         localStorage.setItem('address', address);
+        localStorage.setItem('checkbox', checkbox);
+    }
+//  ********************** for update form *************************
+    const toggleupdate = (res) => {
+        setUpdate(!update)
+        console.log(res)
+        let { id, name, username, email,address,checkbox } = res;
+        localStorage.setItem('ID', id);
+        localStorage.setItem('name', name);
+        localStorage.setItem('username', username);
+        localStorage.setItem('email', email);
+        localStorage.setItem('address', address);
+        localStorage.setItem('checkbox', checkbox);
     }
        
 
@@ -70,19 +82,21 @@ const onDelete = (id) => {
                             </div>
                             <div className="ml-3 w-100 overflow-hidden" >
                                 <p className="p-0 m-0">{res.id}</p>
-                                <p className="p-0 m-0">{res.name}</p>
+                                <p className="p-0 m-0">{res.username}</p>
                                 <p className="p-0 m-0">{res.email}</p>
                                 <p className="p-0 m-0">{res.address}</p>
+                                <p className="p-0 m-0">{res.checkbox ? 'Checked' : 'Unchecked'}</p>
                                 <div className="mt-2 text-white status">
                                     <div className="about rounded bg-primary text-white" onClick={() => toggleupdate(res)}>
                                         <span className="articles">Edit</span>
                                         {/* <span className="number1"><FaEdit /></span> */}
                                     </div>
                                     {update && <Update handleClose={toggleupdate}initialValues={res.Objest} />}
-                                    <div className="about text-white rounded bg-success">
+                                    <div className="about text-white rounded bg-success" onClick={() => toggledisplay(res)}>
                                         <span className="articles">Show</span>
                                         {/* <span className="number1"><BiShow /></span> */}
                                     </div>
+                                    {list && <List handleClose={toggledisplay}initialValues={res.Objest} />}
                                     <div className="about text-white rounded bg-danger"onClick={() => onDelete(res.id)} >
                                         <span className="articles">Delete</span>
                                         {/* <span className="number1"><AiFillDelete /></span> */}
