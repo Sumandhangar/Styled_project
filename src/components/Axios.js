@@ -90,17 +90,14 @@ const onDelete = (id) => {
                                 <div className="mt-2 text-white status">
                                     <div className="about rounded bg-primary text-white" onClick={() => toggleupdate(res)}>
                                         <span className="articles">Edit</span>
-                                        {/* <span className="number1"><FaEdit /></span> */}
                                     </div>
                                     {update && <Update handleClose={toggleupdate}initialValues={res.Objest} />}
                                     <div className="about text-white rounded bg-success" onClick={() => toggledisplay(res)}>
                                         <span className="articles">Show</span>
-                                        {/* <span className="number1"><BiShow /></span> */}
                                     </div>
                                     {list && <List handleClose={toggledisplay}initialValues={res.Objest} />}
                                     <div className="about text-white rounded bg-danger"onClick={() => onDelete(res.id)} >
                                         <span className="articles">Delete</span>
-                                        {/* <span className="number1"><AiFillDelete /></span> */}
                                     </div>
                                 </div>
                             </div>
