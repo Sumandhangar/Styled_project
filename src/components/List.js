@@ -39,28 +39,6 @@ export default function Update(props) {
                     <div className='popup-box'>
                         <div className='box'>
                             <span className="close-icon" onClick={props.handleClose}>x</span>
-                            {/* <table className='table border'>
-                                <thead>
-                                    <tr className=''>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Address</th>
-                                        <th>Checked</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{id}</td>
-                                        <td>{name}</td>
-                                        <td>{username}</td>
-                                        <td>{email}</td>
-                                        <td>{address}</td>
-                                        <td>{checkbox}</td>
-                                    </tr>
-                                </tbody>
-                            </table> */}
                               <ul>
                                   <li className='d-flex border-left border-top border-right'>
                                       <label className='pl-2 pt-2'>ID</label>
