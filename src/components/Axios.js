@@ -26,20 +26,21 @@ const Axios = (props) => {
             });
     }, []);
     // ***************************For Delete ********************************
-    // const [onDelete,setonDelete] = useState();
-    // const submit = () =>{
-    //     setonDelete(!onDelete)
-    // }
-     const onDelete = (id) => {
-        axios.delete(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`)
-            .then((id) => {
-                if (id.status === 200 && window.confirm) {
-                    window.confirm("Student successfully deleted");
-                    window.location.reload();
-                } else window.confirm("Error")
-            })
-            .catch((err) => alert("Something went wrong"));
-    }
+    
+    
+          
+               const onDelete = (id) => {
+            axios.delete(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`)
+               .then((id) => {
+                   if (id.status === 200 && window.confirm) {
+                       alert("Student successfully deleted");
+                       window.location.reload();
+                   } else window.confirm("Error")
+               })
+               .catch((err) => alert("Something went wrong"));   
+       }
+    
+           
 
     // *****************************for Create new user********************
     const toggleform = () => {
