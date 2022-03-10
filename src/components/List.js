@@ -39,32 +39,32 @@ export default function Update(props) {
                     <div className='popup-box'>
                         <div className='box'>
                             <span className="close-icon" onClick={props.handleClose}>x</span>
-                              <ul>
-                                  <li className='d-flex border-left border-top border-right'>
-                                      <label className='pl-2 pt-2'>ID</label>
-                                      <p className='pr-2 pt-2'>{id}</p>
-                                  </li>
-                                  <li className='d-flex border-top border-left border-right'>
-                                      <label className='pl-2 pt-2'>Name</label>
-                                      <p className='pr-2 pt-2'>{name}</p>
-                                  </li>
-                                  <li className='d-flex border-top border-left border-right'>
-                                      <label className='pl-2 pt-2'>Username</label>
-                                      <p className='pr-2 pt-2'>{username}</p>
-                                  </li>
-                                  <li className='d-flex border-top border-left border-right'>
-                                      <label className='pl-2 pt-2'>Email</label>
-                                      <p className='pr-2 pt-2'>{email}</p>
-                                  </li>
-                                  <li className='d-flex border-top border-left border-right'>
-                                      <label className='pl-2 pt-2'>Address</label>
-                                      <p className='pr-2 pt-2'>{address}</p>
-                                  </li>
-                                  <li className='d-flex border'>
-                                      <label className='pl-2 pt-2'>Status</label>
-                                      <p className='pr-2 pt-2'>{checkbox}</p>
-                                  </li>
-                              </ul>
+                            <ul>
+                                <li className='d-flex border-left border-top border-right'>
+                                    <label className='pl-2 pt-2'>ID</label>
+                                    <p className='pr-2 pt-2'>{id}</p>
+                                </li>
+                                <li className='d-flex border-top border-left border-right'>
+                                    <label className='pl-2 pt-2'>Name</label>
+                                    <p className='pr-2 pt-2'>{name}</p>
+                                </li>
+                                <li className='d-flex border-top border-left border-right'>
+                                    <label className='pl-2 pt-2'>Username</label>
+                                    <p className='pr-2 pt-2'>{username}</p>
+                                </li>
+                                <li className='d-flex border-top border-left border-right'>
+                                    <label className='pl-2 pt-2'>Email</label>
+                                    <p className='pr-2 pt-2'>{email}</p>
+                                </li>
+                                <li className='d-flex border-top border-left border-right'>
+                                    <label className='pl-2 pt-2'>Address</label>
+                                    <p className='pr-2 pt-2'>{address}</p>
+                                </li>
+                                <li className='d-flex border'>
+                                    <label className='pl-2 pt-2'>Status</label>
+                                    <p className='pr-2 pt-2'>{checkbox}</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

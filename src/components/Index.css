@@ -1,24 +1,27 @@
-
-body{
+body {
     background-color: rgb(202, 237, 248);
 }
-.box{
+
+.box {
     width: 100%;
     border-radius: 5px;
     background-color: white;
     padding: 10px;
 }
-.image{
+
+.image {
     height: 140px;
     width: 50%;
     border-radius: 5px;
     margin: 0;
 }
-.status{
+
+.status {
     display: flex;
     justify-content: space-between;
 }
-.about{
+
+.about {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,13 +31,15 @@ body{
     text-align: center;
     cursor: pointer;
 }
-ul{
+
+ul {
     list-style: none;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-ul li{
+
+ul li {
     display: flex;
     justify-content: space-between;
 }

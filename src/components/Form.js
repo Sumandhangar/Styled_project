@@ -14,7 +14,7 @@ const StudentForm = (props) => {
     checkbox: Yup.boolean().required("Rquired"),
   });
 
-//  console.log(props)
+  //  console.log(props)
   return (
     <div className="form-wrapper popup-box ">
       <div className="box">
@@ -63,7 +63,7 @@ const StudentForm = (props) => {
             <FormGroup className="d-flex justify-content-center mb-3">
               <Field name="checkbox" type="checkbox"
                 className=" mt-1" />
-                 <label htmlFor='checkbox' className=" pl-2">Remember</label>
+              <label htmlFor='checkbox' className=" pl-2">Remember</label>
             </FormGroup>
             <Button variant="danger" size="lg"
               block="block" type="submit">
