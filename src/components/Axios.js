@@ -38,10 +38,11 @@ const onDelete = (id) => {
               .catch((err) => alert("Something went wrong"));
   }
  
-    // *****************************for Create new card********************
+    // *****************************for Create new user********************
     const toggleform = () => {
         setCreate(!create)
     }
+     // ******************** for display user **********************
     const toggledisplay = (res) => {
         setList(!list)
         let { id, name, username, email,address,checkbox } = res;
