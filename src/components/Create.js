@@ -7,6 +7,9 @@ import { boolean } from 'yup';
 const Create = (props) => {
   const [formValues,setFormValues] = useState({
     name:'',username:'',email:'',address:'', checkbox:false})
+
+   
+    // *****************************************************
     const onSubmit = studentObject =>{
       axios.post('https://62289f859fd6174ca82a068c.mockapi.io/database', studentObject)
      .then((data) => {
@@ -17,6 +20,10 @@ const Create = (props) => {
     })
     .catch((err) => alert("Something went wrong"));
     }
+    
+
+
+
   return (
     <>
     <div className='popup-box mt-5'>

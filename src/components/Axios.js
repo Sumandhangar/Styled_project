@@ -1,13 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Index.css";
-import { FaEdit } from "react-icons/fa";
-import { BiShow } from 'react-icons/bi';
-import { AiFillDelete } from 'react-icons/ai'
 import Popup from './Popup'
 import Update from './Update'
 import Create from './Create'
 import List from './List'
+
 
 const Axios = (props) => {
     // ******************For Fetch data from api ****************************
@@ -27,7 +25,7 @@ const Axios = (props) => {
     }, []);
     // ***************************For Delete ********************************
     const onDelete = (id) => {
-        const value = window.confirm("Student successfully deleted");
+        const value = window.confirm("Are you sure you want to delete this data");
         if (value === true) {
             axios.delete(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`)
                 .then((id) => {

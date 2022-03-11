@@ -62,7 +62,7 @@ export default function Update(props) {
                                 </li>
                                 <li className='d-flex border'>
                                     <label className='pl-2 pt-2'>Status</label>
-                                    <p className='pr-2 pt-2'>{checkbox}</p>
+                                    <p className='pr-2 pt-2'>{checkbox ? 'Checked' : 'Unchecked'}</p>
                                 </li>
                             </ul>
                         </div>
