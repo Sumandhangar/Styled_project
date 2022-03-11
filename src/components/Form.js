@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import * as Yup from "yup";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { FormGroup, FormControl, Button } from "react-bootstrap";
+import { Formik, Form, Field, ErrorMessage, validateYupSchema, yupToFormErrors } from "formik";
+import { FormGroup, Button } from "react-bootstrap";
 
 const StudentForm = (props) => {
+  const [values, setValues] = useState({});
   const validationSchema = Yup.object().shape({
+    values:'',
     name: Yup.string().required("Rquired"),
     username: Yup.string().required("Rquired"),
     email: Yup.string()
@@ -13,8 +15,7 @@ const StudentForm = (props) => {
     address: Yup.string().required("Rquired"),
     checkbox: Yup.boolean().required("Rquired"),
   });
-
-  //  console.log(props)
+ 
   return (
     <div className="form-wrapper popup-box ">
       <div className="box">
@@ -42,7 +43,7 @@ const StudentForm = (props) => {
             </FormGroup>
             <FormGroup className="d-flex mb-3">
               <label htmlFor='name' className="pr-5">Email</label>
-              <Field name="email" type="email"
+              <Field name="email" type="email" 
                 className="form-control w-75 ml-2" />
               <ErrorMessage
                 name="email"
