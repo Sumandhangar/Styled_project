@@ -27,14 +27,20 @@ const Axios = (props) => {
     }, []);
     // ***************************For Delete ********************************
     const onDelete = (id) => {
-        axios.delete(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`)
-            .then((id) => {
-                if (id.status === 200 && window.confirm) {
-                    alert("Student successfully deleted");
-                    window.location.reload();
-                } else window.confirm("Error")
-            })
-            .catch((err) => alert("Something went wrong"));
+        const value = window.confirm("Student successfully deleted");
+        if (value === true) {
+            axios.delete(`https://62289f859fd6174ca82a068c.mockapi.io/database/${id}`)
+                .then((id) => {
+                    if (id.status === 200) {
+                        window.location.reload();
+                    } else window.confirm("Error")
+                })
+                .catch((err) => alert("Something went wrong"));
+        }
+        else {
+            console.log("data coluld not delete");
+        }
+
     }
     // *****************************for Create new user********************
     const toggleform = () => {
