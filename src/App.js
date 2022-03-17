@@ -25,7 +25,8 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // import Product from "./components/web/Product";
 // import Contact from "./components/web/Contact";
 // import Footer from "./components/web/Footer";
-<<<<<<< HEAD
+
+
 // *****************************************
 import Navbar from "./components/webcopy/Navbar";
 import Banner from "./components/webcopy/Banner";
@@ -39,21 +40,6 @@ import { Rays } from "../src/components/webcopy/Css";
 // ***************************************************
 
 
-=======
-// ************************************************
-// import Navbar from "./components/webcopy/Navbar";
-// import Banner from "./components/webcopy/Banner";
-// import About from "./components/webcopy/About";
-// import Work from "./components/webcopy/Work";
-// import Json from "./components/webcopy/Json";
-// import Product from "./components/webcopy/Product";
-// import Contact from "./components/webcopy/Contact";
-// import Footers from "./components/webcopy/Footer";
-// import { Rays } from "../src/components/webcopy/Css";
-// **********************************************
-import Index from './Tutorial/Pages/index';
-import Signin from "./Tutorial/Pages/Signin";
->>>>>>> 0d86394477580897d73b6980a5047ff72c6fb6b7
 function App() {
 
   return (
@@ -74,15 +60,8 @@ function App() {
         <section id="work"><Work /></section>
         <section id="product"><Product /></section>
       </div>
-<<<<<<< HEAD
+
       <div className="container-fluid"><section id="contact"><Contact /></section><Footers /></div>
-=======
-      <div className="container-fluid"><section id="contact"><Contact /></section><Footers /></div> */}
-
-
-
-
->>>>>>> 0d86394477580897d73b6980a5047ff72c6fb6b7
       {/* ************************************************** */}
 
       {/* <Navigation />
@@ -93,23 +72,11 @@ function App() {
       <Route path='/home' element={<Home />} />
     </Routes>
     <Footer /> */}
-<<<<<<< HEAD
       {/* ******************************************** */}
       {/* <Navbar />
       <Sidebar /> */}
 
   
-=======
-
-      {/* **************************************************** */}
-    
-   <Routes>
-   <Route exact path='/' exact element={<Index />} />
-   <Route exact path='/Signin' exact element={<Signin />} />
-   </Routes>
-
-    {/* ********************************************************** */}
->>>>>>> 0d86394477580897d73b6980a5047ff72c6fb6b7
     </>
   );
 }
