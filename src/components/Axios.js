@@ -90,14 +90,18 @@ const Axios = (props) => {
                                     <p className="p-0 m-0">{res.address}</p>
                                     <p className="p-0 m-0">{res.checkbox ? 'Checked' : 'Unchecked'}</p>
                                     <div className="mt-2 text-white status">
-                                        <div className="about rounded bg-primary text-white" onClick={() => toggleupdate(res)}>
-                                            <span className="articles">Edit</span>
+                                        <div>
+                                            <div className="about rounded bg-primary text-white" onClick={() => toggleupdate(res)}>
+                                                <span className="articles">Edit</span>
+                                            </div>
+                                            {update && <Update handleClose={toggleupdate} initialValues={res.Objest} />}
                                         </div>
-                                        {update && <Update handleClose={toggleupdate} initialValues={res.Objest} />}
-                                        <div className="about text-white rounded bg-success" onClick={() => toggledisplay(res)}>
-                                            <span className="articles">Show</span>
+                                        <div>
+                                            <div className="about text-white rounded bg-success" onClick={() => toggledisplay(res)}>
+                                                <span className="articles">Show</span>
+                                            </div>
+                                            {list && <List handleClose={toggledisplay} initialValues={res.Objest} />}
                                         </div>
-                                        {list && <List handleClose={toggledisplay} initialValues={res.Objest} />}
                                         <div className="about text-white rounded bg-danger" onClick={() => onDelete(res.id)} >
                                             <span className="articles">Delete</span>
                                         </div>
