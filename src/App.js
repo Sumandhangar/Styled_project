@@ -40,8 +40,6 @@ function App() {
         <section id="work"><Work /></section>
         <section id="product"><Product /></section>
       </div>
-      <div className="container-fluid"><section id="contact"><Contact /></section><Footers /></div>
-
 
     </>
   );
