@@ -25,13 +25,7 @@ import { GlobalStyle } from "./components/GlobalStyle";
 // import Product from "./components/web/Product";
 // import Contact from "./components/web/Contact";
 // import Footer from "./components/web/Footer";
-<<<<<<< HEAD
 // ************************************************
-=======
-
-
-// *****************************************
->>>>>>> 740e13ba41e9ed9a34bd99dcf2eb851c0cb79fc0
 import Navbar from "./components/webcopy/Navbar";
 import Banner from "./components/webcopy/Banner";
 import About from "./components/webcopy/About";
@@ -41,13 +35,7 @@ import Product from "./components/webcopy/Product";
 import Contact from "./components/webcopy/Contact";
 import Footers from "./components/webcopy/Footer";
 import { Rays } from "../src/components/webcopy/Css";
-<<<<<<< HEAD
 // **********************************************
-=======
-// ***************************************************
-
-
->>>>>>> 740e13ba41e9ed9a34bd99dcf2eb851c0cb79fc0
 function App() {
 
   return (
@@ -68,29 +56,9 @@ function App() {
         <section id="work"><Work /></section>
         <section id="product"><Product /></section>
       </div>
-<<<<<<< HEAD
       <div className="container-fluid"><section id="contact"><Contact /></section><Footers /></div>
 
 
-=======
-
-      <div className="container-fluid"><section id="contact"><Contact /></section><Footers /></div>
-      {/* ************************************************** */}
-
-      {/* <Navigation />
-    <Routes>
-      <Route exact path='/' exact element={<Form />} />
-      <Route path='/total' element={<Total />} />
-      <Route path='/oprators' element={<Oprators />} />
-      <Route path='/home' element={<Home />} />
-    </Routes>
-    <Footer /> */}
-      {/* ******************************************** */}
-      {/* <Navbar />
-      <Sidebar /> */}
-
-  
->>>>>>> 740e13ba41e9ed9a34bd99dcf2eb851c0cb79fc0
     </>
   );
 }
